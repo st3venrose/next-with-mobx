@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 const Nav = () => (
   <nav>
@@ -9,10 +9,11 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-     
+
     </ul>
 
-    <style jsx>{`
+    <style jsx>
+      {`
       :global(body) {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
@@ -37,8 +38,10 @@ const Nav = () => (
         text-decoration: none;
         font-size: 13px;
       }
-    `}</style>
-  </nav>
-)
+    `}
 
-export default Nav
+    </style>
+  </nav>
+);
+
+export default Nav;

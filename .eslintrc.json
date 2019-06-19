@@ -3,7 +3,15 @@
         "browser": true,
         "es6": true
     },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"]
+        }
+      }
+    },
     "globals": { },
+    "extends": "airbnb",
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -13,5 +21,10 @@
     "plugins": [
         "react"
     ],
-    "rules": { }
-}
+    "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/jsx-no-target-blank": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "no-restricted-imports": [2, { "patterns": ["../src"] }]
+    }
+  }
