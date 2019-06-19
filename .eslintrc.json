@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": { },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+          "impliedStrict": true
+        }
+      },
+    "plugins": [
+        "react"
+    ],
+    "rules": { }
+}
