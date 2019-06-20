@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // Dependencies
 import Link from 'next/link';
 import { inject, observer } from 'mobx-react';
+import { any } from 'prop-types';
 
 // Components
 import Head from '@/components/head';
@@ -21,7 +22,8 @@ class Home extends Component {
   }
 
   render() {
-    const { shows } = this.props.store;
+    const { store } = this.props;
+    const { shows } = store;
 
     return (
       <div>
@@ -42,5 +44,9 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  store: any.isRequired,
+};
 
 export default Home;
