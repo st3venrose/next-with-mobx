@@ -9,7 +9,21 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-
+      <li>
+        <Link prefetch href="/tv-show">
+          <a>Tv show</a>
+        </Link>
+      </li>
+      <li>
+        <Link prefetch href="/beer">
+          <a>Beers</a>
+        </Link>
+      </li>
+      <li>
+        <Link prefetch href="/about">
+          <a>About</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>

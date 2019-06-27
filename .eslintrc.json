@@ -22,10 +22,11 @@
         "react"
     ],
     "rules": {
+      "no-param-reassign": 0,
+      "no-restricted-imports": [2, { "patterns": ["../src"] }],
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/jsx-no-target-blank": 0,
       "react/forbid-prop-types": 0,
-      "jsx-a11y/anchor-is-valid": 0,
-      "no-restricted-imports": [2, { "patterns": ["../src"] }]
+      "jsx-a11y/anchor-is-valid": 0
     }
   }
