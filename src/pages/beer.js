@@ -11,10 +11,6 @@ import BeerList from '@/components/beer/beer-list';
 @inject('beerStore')
 @observer
 class Beer extends Component {
-  static propTypes = {
-    beerStore: any.isRequired,
-  };
-
   static async getInitialProps({ mobxStore }) {
     await mobxStore.beerStore.fetchBeers();
     return { };
@@ -32,5 +28,9 @@ class Beer extends Component {
     );
   }
 }
+
+Beer.propTypes = {
+  beerStore: any.isRequired,
+};
 
 export default withLayout(Beer, 'some-good-beer');

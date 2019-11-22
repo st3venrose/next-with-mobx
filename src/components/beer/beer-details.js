@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // Dependencies
 import { object } from 'prop-types';
 
 const BeerList = ({ beer }) => (
-  <Fragment>
+  <>
     <h1>Beer details</h1>
     <p>
     abv:
@@ -26,7 +26,7 @@ const BeerList = ({ beer }) => (
       {' '}
       {beer.brewers_tips}
     </p>
-  </Fragment>
+  </>
 );
 
 BeerList.propTypes = {

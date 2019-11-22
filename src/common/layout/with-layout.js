@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 // Components
 import Head from '@/common/layout/head';
@@ -12,11 +12,11 @@ function withLayout(WrappedComponent, title = '') {
 
     render() {
       return (
-        <Fragment>
+        <>
           <Head title={title} />
           <Nav />
           <WrappedComponent {...this.props} />
-        </Fragment>
+        </>
       );
     }
   };

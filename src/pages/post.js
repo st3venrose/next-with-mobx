@@ -10,10 +10,6 @@ import withLayout from '@/common/layout/with-layout';
 @inject('tvShowStore')
 @observer
 class Post extends Component {
-  static propTypes = {
-    tvShowStore: any.isRequired,
-  };
-
   static async getInitialProps({ query, mobxStore }) {
     const { id } = query;
     await mobxStore.tvShowStore.fetchOneShow(id);
@@ -33,5 +29,9 @@ class Post extends Component {
     );
   }
 }
+
+Post.propTypes = {
+  tvShowStore: any.isRequired,
+};
 
 export default withLayout(Post, 'post');

@@ -11,12 +11,8 @@ import TvShowList from '@/components/tv-show/tv-show-list';
 @inject('tvShowStore')
 @observer
 class TvShow extends Component {
-  static propTypes = {
-    tvShowStore: any.isRequired,
-  };
-
   static async getInitialProps({ mobxStore }) {
-    await mobxStore.tvShowStore.fetchData();
+    await mobxStore.tvShowStore.fetchShows();
     return { };
   }
 
@@ -34,5 +30,9 @@ class TvShow extends Component {
     );
   }
 }
+
+TvShow.propTypes = {
+  tvShowStore: any.isRequired,
+};
 
 export default withLayout(TvShow, 'tv shows');

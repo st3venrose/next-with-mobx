@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // Dependencies
 import Link from 'next/link';
@@ -30,7 +30,7 @@ const offeredBearTemplate = (offeredBeer) => {
 };
 
 const TvShowList = ({ shows }) => (
-  <Fragment>
+  <>
     <ul>
       {shows.map(({ show, offeredBeer }) => (
         <li key={show.id}>
@@ -48,7 +48,7 @@ const TvShowList = ({ shows }) => (
       }
       `}
     </style>
-  </Fragment>
+  </>
 );
 
 TvShowList.propTypes = {

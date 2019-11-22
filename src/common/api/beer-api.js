@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { ROOT_API } from '@/common/constants';
 
-const ROOT_API = 'https://api.punkapi.com/v2/beers';
-
-const fetchBeers = () => axios.get(`${ROOT_API}?page=1&per_page=20`);
-const fetchOfferedBeers = () => axios.get(`${ROOT_API}?page=2&per_page=10`);
-const fetchOneBeer = id => axios.get(`${ROOT_API}/${id}`);
+const fetchBeers = () => axios.get(`${ROOT_API}/beers`);
+const fetchOfferedBeers = () => axios.get(`${ROOT_API}/offeredBeers`);
+const fetchOneBeer = (id) => axios.get(`${ROOT_API}/beer/${id}`);
 
 export default {
   fetchBeers,

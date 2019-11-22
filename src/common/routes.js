@@ -4,7 +4,7 @@ const nextRoutes = require('next-routes');
 const routes = module.exports = nextRoutes();
 
 const APP_ROUTES = [{
-  page: 'index',
+  page: 'home',
   pattern: '/',
 }, {
   page: 'tv-show',
@@ -23,4 +23,4 @@ const APP_ROUTES = [{
   pattern: '/beer/:id',
 }];
 
-APP_ROUTES.forEach(route => routes.add(route));
+APP_ROUTES.forEach((route) => routes.add(route));

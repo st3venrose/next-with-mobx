@@ -5,22 +5,22 @@ const Nav = () => (
   <nav>
     <ul>
       <li>
-        <Link prefetch href="/">
+        <Link href="/">
           <a>Home</a>
         </Link>
       </li>
       <li>
-        <Link prefetch href="/tv-show">
+        <Link href="/tv-show">
           <a>Tv show</a>
         </Link>
       </li>
       <li>
-        <Link prefetch href="/beer">
+        <Link href="/beer">
           <a>Beers</a>
         </Link>
       </li>
       <li>
-        <Link prefetch href="/about">
+        <Link href="/about">
           <a>About</a>
         </Link>
       </li>

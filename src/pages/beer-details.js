@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 // Dependencies
 import { inject, observer } from 'mobx-react';
@@ -10,10 +10,6 @@ import withLayout from '@/common/layout/with-layout';
 @inject('beerStore')
 @observer
 class BeerDetails extends Component {
-  static propTypes = {
-    beerStore: any.isRequired,
-  };
-
   static async getInitialProps({ query, mobxStore }) {
     const { id } = query;
     await mobxStore.beerStore.fetchOneBeer(id);
@@ -25,7 +21,7 @@ class BeerDetails extends Component {
     const { selectedBeer } = beerStore;
 
     return (
-      <Fragment>
+      <>
         <h1>Beer details</h1>
         <p>
     abv:
@@ -47,9 +43,13 @@ class BeerDetails extends Component {
           {' '}
           {selectedBeer.brewers_tips}
         </p>
-      </Fragment>
+      </>
     );
   }
 }
 
 export default withLayout(BeerDetails, 'beer details');
+
+BeerDetails.propTypes = {
+  beerStore: any.isRequired,
+};

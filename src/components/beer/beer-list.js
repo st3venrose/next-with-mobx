@@ -6,7 +6,7 @@ import { array } from 'prop-types';
 
 const BeerList = ({ beers }) => (
   <ul>
-    {beers.map(beer => (
+    {beers.map((beer) => (
       <li key={beer.id}>
         <p>
           {beer.name}

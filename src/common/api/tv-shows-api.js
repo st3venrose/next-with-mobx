@@ -1,9 +1,8 @@
 import axios from 'axios';
+import { ROOT_API } from '@/common/constants';
 
-const ROOT_API = 'http://api.tvmaze.com';
-
-const fetchShows = () => axios.get(`${ROOT_API}/search/shows?q=batman`);
-const fetchOneShow = id => axios.get(`${ROOT_API}/shows/${id}`);
+const fetchShows = () => axios.get(`${ROOT_API}/shows`);
+const fetchOneShow = (id) => axios.get(`${ROOT_API}/show/${id}`);
 
 export default {
   fetchShows,

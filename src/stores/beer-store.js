@@ -21,6 +21,8 @@ class BeerStore {
     } catch (err) {
       Promise.reject(err);
     }
+
+    return this.beers;
   }
 
   @action fetchOneBeer = async (id) => {
