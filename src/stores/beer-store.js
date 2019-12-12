@@ -1,4 +1,3 @@
-
 import { action, observable } from 'mobx';
 
 import beerApi from '@/common/api/beer-api';
@@ -23,17 +22,17 @@ class BeerStore {
     }
 
     return this.beers;
-  }
+  };
 
-  @action fetchOneBeer = async (id) => {
+  @action fetchOneBeer = async id => {
     try {
       const response = await beerApi.fetchOneBeer(id);
       [this.selectedBeer] = response.data;
+      return this.selectedBeer;
     } catch (err) {
       Promise.reject(err);
     }
-  }
-
+  };
 
   @action fetchOfferedBeers = async () => {
     try {
@@ -43,7 +42,7 @@ class BeerStore {
     } catch (err) {
       return Promise.reject(err);
     }
-  }
+  };
 }
 
 export default BeerStore;

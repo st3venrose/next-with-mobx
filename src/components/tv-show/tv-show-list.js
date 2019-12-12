@@ -4,24 +4,14 @@ import React from 'react';
 import Link from 'next/link';
 import { array } from 'prop-types';
 
-const offeredBearTemplate = (offeredBeer) => {
+const offeredBearTemplate = offeredBeer => {
   if (offeredBeer) {
     return (
-      <div className="beer">
-        Offered beer:
-        {' '}
-        {offeredBeer.name}
-        {' '}
+      <div className='beer'>
+        Offered beer: {offeredBeer.name}{' '}
         <Link href={`/beer/${offeredBeer.id}`}>
           <a>Details</a>
         </Link>
-        <style jsx>
-          {`
-            .beer {
-              margin: 0 0 0 50px
-            }
-          `}
-        </style>
       </div>
     );
   }
@@ -41,18 +31,11 @@ const TvShowList = ({ shows }) => (
         </li>
       ))}
     </ul>
-    <style jsx>
-      {`
-      li {
-        display: felx
-      }
-      `}
-    </style>
   </>
 );
 
 TvShowList.propTypes = {
-  shows: array.isRequired,
+  shows: array.isRequired
 };
 
 export default TvShowList;

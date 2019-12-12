@@ -38,7 +38,7 @@ const fetchShows = async (req, res) => {
   res.status(200).send(response.data);
 };
 const fetchOneShow = async (req, res) => {
-  const response = await axios.get(`${process.env.BEER_MOVIE_API_URLAPI_URL}/shows/${req.params.id}`);
+  const response = await axios.get(`${process.env.MOVIE_API_URL}/shows/${req.params.id}`);
   res.status(200).send(response.data);
 };
 

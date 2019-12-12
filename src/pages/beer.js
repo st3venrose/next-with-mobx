@@ -1,36 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // Dependencies
 import { inject, observer } from 'mobx-react';
-import { any } from 'prop-types';
 
 // Components
 import withLayout from '@/common/layout/with-layout';
 import BeerList from '@/components/beer/beer-list';
 
-@inject('beerStore')
-@observer
-class Beer extends Component {
-  static async getInitialProps({ mobxStore }) {
-    await mobxStore.beerStore.fetchBeers();
-    return { };
-  }
+const Beer = ({ beerStore: { beers } }) => (
+  <>
+    <h1>Beers</h1>
+    <BeerList beers={beers} />
+  </>
+);
 
-  render() {
-    const { beerStore } = this.props;
-    const { beers } = beerStore;
-
-    return (
-      <div>
-        <h1>Beers</h1>
-        <BeerList beers={beers} />
-      </div>
-    );
-  }
-}
-
-Beer.propTypes = {
-  beerStore: any.isRequired,
+Beer.getInitialProps = ({ mobxStore }) => {
+  return mobxStore.beerStore.fetchBeers();
 };
 
-export default withLayout(Beer, 'some-good-beer');
+export default inject('beerStore')(observer(withLayout(Beer, 'some-good-beer')));
+

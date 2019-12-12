@@ -16,22 +16,29 @@ class MyMobxApp extends App {
 
     return {
       ...appProps,
-      initialMobxState: mobxStore,
+      initialMobxState: mobxStore
     };
   }
 
   constructor(props) {
     super(props);
     const isServer = typeof window === 'undefined';
-    this.mobxStore = isServer ? props.initialMobxState : initializeStore(props.initialMobxState);
+    this.mobxStore = isServer
+      ? props.initialMobxState
+      : initializeStore(props.initialMobxState);
   }
 
   render() {
     const { Component } = this.props;
 
     return (
-      <Provider beerStore={this.mobxStore.beerStore} tvShowStore={this.mobxStore.tvShowStore}>
-        <Component />
+      <Provider
+        beerStore={this.mobxStore.beerStore}
+        tvShowStore={this.mobxStore.tvShowStore}
+      >
+        <React.StrictMode>
+          <Component />
+        </React.StrictMode>
       </Provider>
     );
   }

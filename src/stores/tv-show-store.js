@@ -29,6 +29,8 @@ class TvShowStore {
     try {
       const response = await tvShowApi.fetchOneShow(id);
       this.selectedShow = response.data;
+
+      return this.selectedShow;
     } catch (err) {
       Promise.reject(err);
     }

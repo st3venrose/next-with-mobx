@@ -2,7 +2,7 @@
   "name": "create-next-example-app",
   "scripts": {
     "dev": "node server/server.js",
-    "server": "nodemon -w server server/server.js",
+    "dev:server": "nodemon -w server server/server.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext .js . --ignore-path .gitignore"
