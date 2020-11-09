@@ -1,1 +1,1 @@
-### Basic example with ajax
+### Mobx with NextJs example
